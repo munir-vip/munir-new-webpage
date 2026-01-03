@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+
+    --glow-cyan: 188 91% 43%;
+    --glow-violet: 258 90% 66%;
+    --glow-orange: 17 88% 52%;
+    --glow-pink: 330 81% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 20px hsla(var(--glow-cyan), 0.5);
+  }
+
+  .text-glow-violet {
+    text-shadow: 0 0 20px hsla(var(--glow-violet), 0.5);
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 20px hsla(var(--glow-orange), 0.5);
+  }
+
+  .glow-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-lg;
+    transition: all 0.3s ease;
+  }
+
+  .glow-card:hover {
+    @apply border-white/20;
+    box-shadow: 0 0 30px hsla(var(--glow-cyan), 0.3);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400;
+  }
+}
